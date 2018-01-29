@@ -30,7 +30,7 @@ public class CumulativeMultiply {
                 l.set(i + 1, 0.0); //Violation #4: Did not use braces for the body of an if statement - https://wiki.sei.cmu.edu/confluence/display/java/EXP52-J.+Use+braces+for+the+body+of+an+if%2C+for%2C+or+while+statement?src=contextnavpagetreemode
             else
                 l.set(i + 1, 3 + l.get(i) * l.get(i+1)); //Violation #5: Did not use parenthesis for order of operation - https://wiki.sei.cmu.edu/confluence/display/java/EXP53-J.+Use+parentheses+for+precedence+of+operation
-
+            //Just wanna see something..
         }
         return l;
     }
