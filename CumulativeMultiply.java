@@ -23,14 +23,15 @@ public class CumulativeMultiply {
         }
     }
 
-    private static ArrayList<Double> multiplyArray(ArrayList l) {   //Violation #1: Using raw types - https://wiki.sei.cmu.edu/confluence/display/java/DCL61-J.+Do+not+use+raw+types?src=contextnavpagetreemode
-        int i = 0;  //Violation #2: Did not minimize scope of variables - https://wiki.sei.cmu.edu/confluence/display/java/DCL53-J.+Minimize+the+scope+of+variables?src=contextnavpagetreemode
-        for (i = 0; i < l.size() - 1; i++) {
-            if (l.get(i) = 0)  //Violation #3: Performed assignment inside conditional expression - https://wiki.sei.cmu.edu/confluence/display/java/EXP51-J.+Do+not+perform+assignments+in+conditional+expressions
-                l.set(i + 1, 0.0); //Violation #4: Did not use braces for the body of an if statement - https://wiki.sei.cmu.edu/confluence/display/java/EXP52-J.+Use+braces+for+the+body+of+an+if%2C+for%2C+or+while+statement?src=contextnavpagetreemode
-            else
-                l.set(i + 1, 3 + l.get(i) * l.get(i+1)); //Violation #5: Did not use parenthesis for order of operation - https://wiki.sei.cmu.edu/confluence/display/java/EXP53-J.+Use+parentheses+for+precedence+of+operation
-            //Just wanna see something..
+    private static ArrayList<Double> multiplyArray(ArrayList<Double> l) {   //Violation #1: fixed by adding a type
+          //Violation #2: fixed by declaring the varible inside the for loop
+        for (int i = 0; i < l.size() - 1; i++) {
+            if (l.get(i) == 0) {  //Violation #3: fixed by changing the assignment operator to the equality operator 
+                l.set(i + 1, 0.0); //Violation #4: fixed by adding braces
+            }
+            else {
+                l.set(i + 1, (3 + l.get(i)) * l.get(i+1)); //Violation #5: fixed by adding parentheses
+            }
         }
         return l;
     }
